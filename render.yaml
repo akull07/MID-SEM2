@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: lost-and-found-backend
+    env: node
+    region: oregon
+    plan: free
+    branch: main
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+
+  - type: static
+    name: lost-and-found-frontend
+    env: static
+    region: oregon
+    plan: free
+    branch: main
+    root: frontend
+    buildCommand: npm install && npm run build
+    publishPath: dist
