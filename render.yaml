@@ -5,8 +5,9 @@ services:
     region: oregon
     plan: free
     branch: main
-    buildCommand: cd backend && npm install
-    startCommand: cd backend && npm start
+    root: backend
+    buildCommand: npm install
+    startCommand: npm start
 
   - type: static
     name: lost-and-found-frontend
